@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미리 입력된 일정 달력</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        #calendar {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8); /* 달력 가독성을 위한 반투명 배경 */
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #ourtitle {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="ourtitle">국민은행 IT's your life 교육 일정</h2>
+    <div id="calendar"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth', // 월별 보기
+                events: [
+                    //3월 시작
+                    {
+                    title: '웹 표준 HTML/CSS/JavaScript',
+                    start: '2025-03-04',
+                    end: '2025-03-08',
+                    color: "#9900cc"
+                    },
+                    {
+                    title: '웹 표준 HTML/CSS/JavaScript',
+                    start: '2025-03-10',
+                    end: '2025-03-12',
+                    color: "#9900cc"
+                    },
+                    {
+                    title: '웹 서버 개발을 위한 Node.js',
+                    start: '2025-03-12',
+                    end: '2025-03-15',
+                    color: "#9966ff"
+                    },
+                    {
+                    title: 'Git/GitHub 특강',
+                    start: '2025-03-17',
+                    end: '2025-03-19',
+                    color: "#ccccff"
+                    },
+                    {
+                    title: '웹 인터페이스 구축을 위한 Vue.js',
+                    start: '2025-03-19',
+                    end: '2025-03-22',
+                    color: "#cc99cc"
+                    },
+                    {
+                    title: '웹 인터페이스 구축을 위한 Vue.js',
+                    start: '2025-03-24',
+                    end: '2025-03-29',
+                    color: "#cc99cc"
+                    },
+                    {
+                    title: '웹 인터페이스 구축을 위한 Vue.js',
+                    start: '2025-03-31',
+                    end: '2025-04-01',
+                    color: "#cc99cc"
+                    }, //여기까지 3월 완료
+                    //5월 시작
+                    {
+                        title: 'IT\'s your life 쉬는날',
+                    start: '2025-05-01',
+                    end: '2025-05-07',
+                    color: "#FF6666",
+                    },
+                    {
+                    title: '백엔드 개발을 위한 자바 프로그래밍',
+                    start: '2025-05-07',
+                    end: '2025-05-09',
+                    },
+                    {
+                    title: '코딩테스트 대비 자료구조와 알고리즘',
+                    start: '2025-05-09',
+                    end: '2025-05-10',
+                    color: "#33ccff"
+                    },
+                    {
+                    title: '백엔드 개발을 위한 자바 프로그래밍',
+                    start: '2025-05-12',
+                    end: '2025-05-13',
+                    color: "#33ccff"
+                    },
+                    {
+                    title: 'MySQL 기반 RDBMS 활용과 JDBC',
+                    start: '2025-05-13',
+                    end: '2025-05-16',
+                    color: "#cc99cc"
+                    },
+                    {
+                    title: '코딩테스트 대비 자료구조와 알고리즘',
+                    start: '2025-05-16',
+                    end: '2025-05-17',
+                    color: "#33ccff"
+                    },
+                    {
+                    title: 'MySQL 기반 RDBMS 활용과 JDBC',
+                    start: '2025-05-19',
+                    end: '2025-05-23',
+                    color: "#cc99cc"
+                    },
+                    {
+                    title: '코딩테스트 대비 자료구조와 알고리즘',
+                    start: '2025-05-23',
+                    end: '2025-05-24',
+                    color: "#33ccff"
+                    },
+                    {
+                    title: 'MySQL 기반 RDBMS 활용과 JDBC',
+                    start: '2025-05-26',
+                    end: '2025-05-27',
+                    color: "#cc99cc"
+                    },
+                    {
+                    title: 'NoSQL 기반 MongoDB',
+                    start: '2025-05-27',
+                    end: '2025-05-29',
+                    color: "#3366ff"
+                    },
+                    {
+                    title: 'Servlet, JSP, JSTL 기반 서버 프로그래밍',
+                    start: '2025-05-29',
+                    end: '2025-05-30',
+                    color: "#9966ff"
+                    },
+                    {
+                    title: '코딩테스트 대비 자료구조와 알고리즘',
+                    start: '2025-05-30',
+                    end: '2025-05-31',
+                    color: "#33ccff"
+                    },
+                    //여기까지 5월 완료
+                            //4월 시작
+                    {
+                    title: "UI/UX 특강",
+                    start: "2025-03-31",
+                    end: "2025-04-02",
+                    color: "#FF91A4",
+                    },
+                    {
+                    title: "웹 인터페이스 구축을 위한 Vue.js",
+                    start: "2025-04-02",
+                    end: "2025-04-05",
+                    color: "#FFB6C1",
+                    },
+                    {
+                    title: "Vue.js 기반의 온라인 가계부 서비스(스켈레톤 프로젝트)",
+                    start: "2025-04-07",
+                    end: "2025-04-12",
+                    color: "#C21E56",
+                    },
+                    {
+                    title: "백엔드 개발을 위한 자바 프로그래밍",
+                    start: "2025-04-14",
+                    end: "2025-04-18",
+                    color: "#FFB6C1",
+                    },
+                    {
+                    title: "코딩테스트 대비 자료구조와 알고리즘",
+                    start: "2025-04-18",
+                    color: "#FFB6C1",
+                    },
+                    {
+                    title: "백엔드 개발을 위한 자바 프로그래밍",
+                    start: "2025-04-21",
+                    end: "2025-04-25",
+                    color: "#FFB6C1",
+                    },
+                    {
+                    title: "코딩테스트 대비 자료구조와 알고리즘",
+                    start: "2025-04-25",
+                    color: "#FFB6C1",
+                    },
+                    {
+                    title: "Git/GitHub 특강",
+                    start: "2025-04-28",
+                    color: "#FF91A4",
+                    },
+                    {
+                    title: "백엔드 개발을 위한 자바 프로그래밍",
+                    start: "2025-04-29",
+                    end: "2025-05-01",
+                    color: "#FFB6C1",
+                    },
+                    //여기까지 4월 완료
+
+                    //6월 시작
+                    {
+                    title: "Servlet, JSP, JSTL 기반 서버 프로그래밍",
+                    start: "2025-06-02",
+                    end: "2025-06-06",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "현충일",
+                    start: "2025-06-06",
+                    color: "#FF6666",
+                    },
+                    {
+                    title: "Spring Framework를 활용한 애플리케이션 개발",
+                    start: "2025-06-09",
+                    end: "2025-06-13",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "코딩테스트 대비 자료구조와 알고리즘",
+                    start: "2025-06-13",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "Spring Framework를 활용한 애플리케이션 개발",
+                    start: "2025-06-16",
+                    end: "2025-06-20",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "코딩테스트 대비 자료구조와 알고리즘",
+                    start: "2025-06-20",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "Spring Framework를 활용한 애플리케이션 개발",
+                    start: "2025-06-23",
+                    end: "2025-06-27",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "코딩테스트 대비 자료구조와 알고리즘",
+                    start: "2025-06-27",
+                    color: "#77DD77",
+                    },
+                    {
+                    title: "Spring Framework를 활용한 애플리케이션 개발",
+                    start: "2025-06-30",
+                    color: "#77DD77",
+                    },
+                    //여기까지 6월 완료
+
+                    // 7월-8월 시작
+                    {
+                    title: "Spring Framework를 활용한 애플리케이션 개발",
+                    start: "2025-07-01",
+                    end: "2025-07-04",
+                    },
+                    {
+                    title: "코딩테스트 대비 자료구조와 알고리즘",
+                    start: "2025-07-04",
+                    },
+                    {
+                    title: "Spring Framework를 활용한 애플리케이션 개발",
+                    start: "2025-07-07",
+                    end: "2025-07-09",
+                    },
+                    {
+                    title: "종합PJT",
+                    start: "2025-07-09",
+                    end: "2025-07-12",
+                    color: "#4767f4",
+                    },
+                    {
+                    title: "현직자 프로젝트 멘토링",
+                    start: "2025-07-12",
+                    color: "#f3995c",
+                    },
+                    {
+                    title: "종합PJT",
+                    start: "2025-07-14",
+                    end: "2025-07-19",
+                    color: "#4767f4",
+                    },
+                    {
+                    title: "종합PJT",
+                    start: "2025-07-21",
+                    end: "2025-07-26",
+                    color: "#4767f4",
+                    },
+                    {
+                    title: "현직자 프로젝트 멘토링",
+                    start: "2025-07-26",
+                    color: "#f3995c",
+                    },
+                    {
+                    title: "종합PJT",
+                    start: "2025-07-28",
+                    end: "2025-08-02",
+                    color: "#4767f4",
+                    },
+                    {
+                    title: "종합PJT",
+                    start: "2025-08-04",
+                    end: "2025-08-09",
+                    color: "#4767f4",
+                    },
+                    {
+                    title: "현직자 프로젝트 멘토링",
+                    start: "2025-08-09",
+                    color: "#f3995c",
+                    },
+                    {
+                    title: "종합PJT",
+                    start: "2025-08-11",
+                    end: "2025-08-13",
+                    color: "#4767f4",
+                    },
+                    {
+                    title: "포트폴리오 강화 특강",
+                    start: "2025-08-13",
+                    color: "#0c6fe8",
+                    },
+                    { title: "프로젝트 고도화", start: "2025-08-14", color: "#0c6fe8" },
+                    {
+                    title: "광복절",
+                    start: "2025-08-15",
+                    color: "#FF6666",
+                    },
+                    {
+                    title: "프로젝트 고도화",
+                    start: "2025-08-18",
+                    end: "2025-08-22",
+                    color: "#0c6fe8",
+                    },
+                ],
+                
+                datesSet: function(view) {
+                    let currentMonth = view.start.getMonth() + 1;
+
+                    /* 월별 배경 이미지 설정 */
+                    let backgroundImages = {
+                        2: "sakura.jpeg",
+                        3: "spring.avif",
+                        4: "parent.webp", 
+                        5: "forest.avif",
+                        6: "sea.jpg",
+                        7: "sunflower.jpg",   
+                        8: "sea.jpg",
+                    };
+
+                    /* 배경 이미지 적용 */
+                    let imageUrl = backgroundImages[currentMonth] || "./images/default.jpg"; 
+                    document.body.style.backgroundImage = `url(${imageUrl})`;
+                    },
+                    // ✅ 날짜 칸에 직접 스티커 추가
+                    dayCellDidMount: function (info) {
+                        const stickerDates = {
+                        '2025-03-02': {
+                            src: './stickers/IMG_2528.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-03-14': {
+                            src: './stickers/IMG_2518.PNG',
+                            position: 'bottom-left',
+                        },
+                        '2025-03-17': {
+                            src: './stickers/IMG_2519.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-03-27': {
+                            src: './stickers/cloud.PNG',
+                            position: 'bottom-right',
+                        },
+                        //4월
+                        '2025-04-01': {
+                            src: './stickers/IMG_2526.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-04-04': {
+                            src: './stickers/IMG_2525.PNG',
+                            position: 'bottom-left',
+                        },
+                        '2025-04-09': {
+                            src: './stickers/IMG_2520.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-04-12': {
+                            src: './stickers/IMG_2521.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-04-17': {
+                            src: './stickers/IMG_2522.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-04-23': {
+                            src: './stickers/IMG_2523.PNG',
+                            position: 'bottom-right',
+                        },
+
+                        //5월
+                        '2025-05-01': {
+                            src: './stickers/IMG_2513.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-05-03': {
+                            src: './stickers/IMG_2514.PNG',
+                            position: 'bottom-left',
+                        },
+                        '2025-05-08': {
+                            src: './stickers/IMG_2515.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-05-19': {
+                            src: './stickers/IMG_2524.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-05-16': {
+                            src: './stickers/IMG_2516.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-05-21': {
+                            src: './stickers/IMG_2517.PNG',
+                            position: 'bottom-right',
+                        },
+
+                        //6월
+                        '2025-06-05': {
+                            src: './stickers/IMG_2508.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-06-10': {
+                            src: './stickers/IMG_2509.PNG',
+                            position: 'bottom-left',
+                        },
+                        '2025-06-17': {
+                            src: './stickers/IMG_2510.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-06-26': {
+                            src: './stickers/IMG_2511.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-06-22': {
+                            src: './stickers/IMG_2512.PNG',
+                            position: 'bottom-right',
+                        },
+
+                        //7월
+                        '2025-07-03': {
+                            src: './stickers/banana.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-07-09': {
+                            src: './stickers/cat.PNG',
+                            position: 'bottom-left',
+                        },
+                        '2025-07-17': {
+                            src: './stickers/buffalo.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-07-27': {
+                            src: './stickers/flower.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-07-15': {
+                            src: './stickers/horse.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-07-05': {
+                            src: './stickers/party-hat.PNG',
+                            position: 'bottom-right',
+                        },
+                        //8월
+                        '2025-08-05': {
+                            src: './stickers/IMG_2502.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-08-10': {
+                            src: './stickers/IMG_2503.PNG',
+                            position: 'bottom-left',
+                        },
+                        '2025-08-14': {
+                            src: './stickers/IMG_2506.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-08-17': {
+                            src: './stickers/IMG_2505.PNG',
+                            position: 'bottom-right',
+                        },
+                        '2025-08-20': {
+                            src: './stickers/IMG_2504.PNG',
+                            position: 'bottom-right',
+                        },
+                        };
+
+                        const dateKey = info.date.toISOString().split('T')[0];
+
+                        if (stickerDates[dateKey]) {
+                        let stickerImg = document.createElement('img');
+                        stickerImg.src = stickerDates[dateKey].src;
+                        stickerImg.classList.add('sticker');
+
+                        // ✅ 원본 비율 유지
+                        stickerImg.style.maxWidth = '50px'; // 최대 너비
+                        stickerImg.style.maxHeight = '50px'; // 최대 높이
+                        stickerImg.style.width = 'auto';
+                        stickerImg.style.height = 'auto';
+                        stickerImg.style.position = 'absolute';
+                        stickerImg.style.zIndex = '100'; // ✅ 이벤트보다 위에 표시
+                        stickerImg.style.pointerEvents = 'none'; // ✅ 클릭 방해 방지
+
+                        // ✅ 위치 설정
+                        switch (stickerDates[dateKey].position) {
+                            case 'bottom-right':
+                            stickerImg.style.bottom = '5px';
+                            stickerImg.style.right = '5px';
+                            break;
+                            case 'bottom-left':
+                            stickerImg.style.bottom = '5px';
+                            stickerImg.style.left = '5px';
+                            break;
+                            case 'top-right':
+                            stickerImg.style.top = '5px';
+                            stickerImg.style.right = '5px';
+                            break;
+                            case 'top-left':
+                            stickerImg.style.top = '5px';
+                            stickerImg.style.left = '5px';
+                            break;
+                            case 'center':
+                            stickerImg.style.top = '50%';
+                            stickerImg.style.left = '50%';
+                            stickerImg.style.transform = 'translate(-50%, -50%)';
+                            break;
+                        }
+
+                        // ✅ 날짜 칸에 스티커 추가
+                        info.el.style.position = 'relative';
+                        info.el.appendChild(stickerImg);
+            }
+          },
+        });
+        calendar.render();
+            });
+        </script>
+    </body>
+    </html>
